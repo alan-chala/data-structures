@@ -23,3 +23,19 @@ class LinkedList():
     new_node.next = self.head
     self.head = new_node
     
+  def display(self):
+    current = self.head
+    
+    while current:
+      print(current.data)
+      current = current.next
+      
+my_list = LinkedList()
+
+my_list.append(10)
+my_list.append(20)
+my_list.append(30)
+
+my_list.prepend(1)
+
+my_list.display()
