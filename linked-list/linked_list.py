@@ -23,6 +23,24 @@ class LinkedList():
     new_node.next = self.head
     self.head = new_node
     
+  def delete(self, data):
+    if not self.head:
+      return
+
+    if self.head.data == data:
+      self.head = self.head.next
+      return
+    
+    current = self.head
+    
+    while current.next:
+      
+      if current.next.data == data:
+        current.next = current.next.next
+        return
+      
+      current = current.next
+    
   def display(self):
     current = self.head
     
@@ -37,5 +55,7 @@ my_list.append(20)
 my_list.append(30)
 
 my_list.prepend(1)
+
+my_list.delete(20)
 
 my_list.display()
