@@ -40,6 +40,17 @@ class LinkedList():
         return
       
       current = current.next
+      
+  def search(self, data):
+    current = self.head
+
+    while current:
+      if (current.data == data):
+        return current.data
+
+      current = current.next
+
+    return -1
     
   def display(self):
     current = self.head
@@ -57,5 +68,7 @@ my_list.append(30)
 my_list.prepend(1)
 
 my_list.delete(20)
+
+print(my_list.search(20))
 
 my_list.display()
