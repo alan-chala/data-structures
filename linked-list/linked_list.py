@@ -65,6 +65,22 @@ class LinkedList():
       current = current.next
 
     return -1
+  
+  def get_linkedlist_len(self):
+    
+    if not self.head:
+      return
+    
+    count = 0
+    
+    current = self.head
+    
+    while current:
+      count += 1
+      current = current.next
+      
+    return count
+
     
   def display(self):
     current = self.head
@@ -78,11 +94,8 @@ my_list = LinkedList()
 my_list.append(10)
 my_list.append(20)
 my_list.append(30)
+my_list.append(40)
+my_list.append(50)
+my_list.append(60)
 
-my_list.prepend(1)
-
-my_list.delete(20)
-
-print(my_list.search(20))
-
-my_list.display()
+print(my_list.get_linkedlist_len())
