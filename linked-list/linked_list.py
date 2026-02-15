@@ -41,6 +41,20 @@ class LinkedList():
       
       current = current.next
       
+  def delete_all(self, data):
+
+    while self.head and self.head.data == data:
+      self.head = self.head.next
+
+    current = self.head
+
+    while current and current.next:
+      if current.next.data == data:
+        current.next = current.next.next
+      else:
+        current = current.next
+
+    
   def search(self, data):
     current = self.head
 
