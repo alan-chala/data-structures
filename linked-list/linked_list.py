@@ -42,7 +42,6 @@ class LinkedList():
       current = current.next
       
   def delete_all(self, data):
-
     while self.head and self.head.data == data:
       self.head = self.head.next
 
@@ -67,7 +66,6 @@ class LinkedList():
     return -1
   
   def get_linkedlist_len(self):
-    
     if not self.head:
       return
     
@@ -80,7 +78,16 @@ class LinkedList():
       current = current.next
       
     return count
-
+  
+  def middleList(self):
+    slow = self.head
+    fast = self.head
+    
+    while fast and fast.next:
+      slow = slow.next
+      fast = fast.next.next
+      
+    return slow.data
     
   def display(self):
     current = self.head
@@ -98,4 +105,4 @@ my_list.append(40)
 my_list.append(50)
 my_list.append(60)
 
-print(my_list.get_linkedlist_len())
+print(my_list.middleList())
