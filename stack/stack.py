@@ -27,6 +27,27 @@ class Stack:
         self.size -= 1
         
         return popped_node.value
-    
+      
+    def display(self):
+      current_node = self.top
+      stack_values = []
+      
+      while current_node:
+        stack_values.append(current_node.value)
+        current_node = current_node.next
+        
+      return stack_values
     
 my_stack = Stack()
+
+def __main__():
+  my_stack.push(10)
+  my_stack.push(20)
+  my_stack.push(30)
+  my_stack.push(40)
+
+  my_stack.display()
+
+  my_stack.pop()
+
+  my_stack.size
